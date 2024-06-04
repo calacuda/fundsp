@@ -4,6 +4,12 @@
 [![crates.io](https://img.shields.io/crates/v/fundsp.svg)](https://crates.io/crates/fundsp)
 [![License](https://img.shields.io/crates/l/fundsp.svg)](https://github.com/SamiPerttu/fundsp/README.md)
 
+# NOTE
+
+This is a fork of the original. It only contains what was necessary to get the Moog filter from `src/moog.rs` working. EVERYTHING else is disabled.
+
+---
+
 ## Audio Processing and Synthesis Library for [Rust](https://www.rust-lang.org/)
 
 [FunDSP](https://github.com/SamiPerttu/fundsp)
