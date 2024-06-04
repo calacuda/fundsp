@@ -10,7 +10,7 @@ use super::signal::*;
 use super::*;
 use duplicate::duplicate_item;
 use std::collections::HashMap;
-use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::atomic::{AtomicU32, Ordering};
 use thingbuf::mpsc::blocking::{channel, Receiver, Sender};
 
 pub type NodeIndex = usize;
@@ -21,7 +21,7 @@ pub type PortIndex = usize;
 pub struct NodeId(u64);
 
 /// This atomic supplies globally unique IDs.
-static GLOBAL_NODE_ID: AtomicU64 = AtomicU64::new(0);
+static GLOBAL_NODE_ID: AtomicU32 = AtomicU32::new(0);
 
 impl NodeId {
     /// Create a new, globally unique node ID.

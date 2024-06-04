@@ -10,7 +10,7 @@ use duplicate::duplicate_item;
 use std::cmp::{Eq, Ord, Ordering};
 use std::collections::BinaryHeap;
 use std::collections::HashMap;
-use std::sync::atomic::AtomicU64;
+use std::sync::atomic::AtomicU32;
 use thingbuf::mpsc::blocking::{channel, Receiver, Sender};
 
 /// Fade curves.
@@ -40,7 +40,7 @@ impl Fade {
 pub struct EventId(u64);
 
 /// This atomic supplies globally unique IDs.
-static GLOBAL_EVENT_ID: AtomicU64 = AtomicU64::new(0);
+static GLOBAL_EVENT_ID: AtomicU32 = AtomicU32::new(0);
 
 impl EventId {
     /// Create a new, globally unique event ID.

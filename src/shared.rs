@@ -5,7 +5,7 @@ use super::combinator::*;
 use super::*;
 use numeric_array::typenum::*;
 use std::sync::atomic::AtomicU32;
-use std::sync::atomic::AtomicU64;
+// use std::sync::atomic::AtomicU64;
 use std::sync::Arc;
 
 /// A variable floating point number to use as a control.
@@ -37,10 +37,10 @@ impl Atomic for f32 {
 }
 
 impl Atomic for f64 {
-    type Storage = AtomicU64;
+    type Storage = AtomicU32;
 
     fn storage(t: Self) -> Self::Storage {
-        AtomicU64::from(t.to_bits())
+        AtomicU32::from(t.to_bits())
     }
 
     #[inline]
